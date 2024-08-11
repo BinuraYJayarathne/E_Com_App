@@ -40,6 +40,7 @@ class TValidator {
     if (!value.contains(RegExp(r'[!@#$%^&*(),.?":{}|<>]'))) {
       return 'Password must contain at least one special character.';
     }
+    return null;
   }
 
   static String? validatePhoneNumber(String? value) {
