@@ -1,3 +1,4 @@
+import 'package:comapp/features/authentication/controllers/controllers_onboarding/onbording_controller.dart';
 import 'package:comapp/features/authentication/screens/onboarding/widgets/onboarding_dotnavigation.dart';
 import 'package:comapp/features/authentication/screens/onboarding/widgets/onboarding_nextbutton.dart';
 import 'package:comapp/features/authentication/screens/onboarding/widgets/onboarding_page.dart';
@@ -10,6 +11,8 @@ import 'package:comapp/utils/device/device_utility.dart';
 import 'package:comapp/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:iconsax/iconsax.dart';
 
@@ -18,11 +21,15 @@ class OnBoardingScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(OnbordingController());
+
     return Scaffold(
         body: Stack(
       children: [
         /// Horizontal Scrolable Pages
         PageView(
+          controller: controller.pageController,
+          onPageChanged: controller.updatePageIndicater,
           children: const [
             OnBoardingPage(
               image: TImages.onBoardingImage1,

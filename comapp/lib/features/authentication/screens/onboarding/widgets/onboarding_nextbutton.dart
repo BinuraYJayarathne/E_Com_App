@@ -1,3 +1,4 @@
+import 'package:comapp/features/authentication/controllers/controllers_onboarding/onbording_controller.dart';
 import 'package:comapp/utils/constants/colors.dart';
 import 'package:comapp/utils/constants/sizes.dart';
 import 'package:comapp/utils/device/device_utility.dart';
@@ -18,7 +19,7 @@ class OnBoardingNextButton extends StatelessWidget {
         right: TSizes.defualtSpace,
         bottom: TDeviceUtils.getBottomNavigationBarHeight(),
         child: ElevatedButton(
-          onPressed: () {},
+          onPressed: () => OnbordingController.instance.nextPage(),
           style: ElevatedButton.styleFrom(
               shape: const CircleBorder(),
               backgroundColor: dark ? TColors.primary : Colors.black),
